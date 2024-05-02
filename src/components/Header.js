@@ -6,7 +6,6 @@ import CloseSVG from '../images/CloseSVG';
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(false)
-  console.log(isVisible)
   return (
     <header className="header-container">
       <div className="header-wrapper">

@@ -9,7 +9,6 @@ function ContactForm(props) {
   const [description, setDescription] = useState('');
 
   useEffect(() => {
-    console.log(props.option)
     setSelectedOption(props.option)
   }, [props.option])
 
@@ -24,6 +23,7 @@ function ContactForm(props) {
       email: email,
       option: selectedOption,
       notes: description, 
+      reply_to: email
     };
     emailjs.send(
       process.env.REACT_APP_EMAILJS_SERVICE_ID, 
