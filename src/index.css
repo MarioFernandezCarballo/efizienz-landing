@@ -8,9 +8,11 @@
   src: url('fonts/Melodrama-Variable.ttf') format('truetype');
 }
 
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: 'Boska',
+  font-family: 'Lato',
     sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
@@ -24,34 +26,117 @@ code {
 
 :root {
   --bg-light: rgb(246 244 238);
+  --bg-dark: rgb(38, 38, 25);
+  --shadow-light: rgba(67, 35, 2, .5);
+  --shadow-dark: rgba(176, 91, 5, 0.502);
   --link-light: rgb(67, 35, 2);
-  --shadow: rgba(67, 35, 2, .5);
-  --link-light-hover: #b05b05;
+  --link-light-hover: rgb(176, 91, 5);
   --title-light: #452e17;
   --subtitle-light: rgb(91, 73, 54);
+  --link-dark: rgb(252, 226, 200);
+  --link-dark-hover: #d48536;
+  --title-dark: #f4d6b8;
+  --subtitle-dark: #e6bb8d;
   --button: rgb(237, 119, 0);
   --button-hover: rgb(93, 47, 0);
   --button-text: rgb(255, 246, 237);
   --pricing-card-bg-light: rgb(255, 255, 255);
 }
 
-.light.App {
+.light {
   background: var(--bg-light)
 }
+
+.dark {
+  background: var(--bg-dark)
+}
+
 .light a {
   color: var(--link-light);
   &:hover {
     color: var(--link-light-hover)
   }
 }
-.light h1, h4 {
+.light h1, h4, p {
   color: var(--title-light);
 }
 .light h3, h4, span {
   color: var(--subtitle-light);
 }
 
-.header-container-light {
+.dark a {
+  color: var(--link-dark);
+  &:hover {
+    color: var(--link-dark-hover)
+  }
+}
+.dark h1, h4, p {
+  color: var(--title-dark);
+}
+.dark h3, h4, span {
+  color: var(--subtitle-dark);
+}
+
+.container {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  };
+}
+
+.wrapper {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 768px) {
+    width: 80%;
+  };
+}
+
+.button {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 5px 15px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--link-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all .4s;
+  &:hover {
+    background-color: var(--bg-light);
+  }
+}
+
+.featured {
+  color: var(--button-text) !important;
+  background-color: var(--button);
+  transition: all .4s;
+  &:hover {
+    background-color: var(--button-hover);
+    font-weight: 700;
+  }
+}
+
+
+
+
+
+
+.header-container {
+  position: relative;
   height: 100px;
   width: 100%;
   display: flex;
@@ -60,7 +145,7 @@ code {
 }
 
 .header-wrapper {
-  width: 50%;
+  width: 60%;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -104,40 +189,45 @@ code {
   };
 }
 
+.header-links-mini {
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  cursor: pointer;
+  @media (max-width: 1024px) {
+    display: flex;
+  };
+}
+
 .header-links a {
   text-decoration: none;
   font-size: large;
   font-weight: 400;
+  transition: all .4s;
   &:hover {
     font-weight: 700;
   }
 }
 
-
-
-.hero-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
-  overflow: hidden;
-  @media (max-width: 768px) {
-    padding: 20px 0;
-  };
+.header-menu-mini {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 30;
 }
 
-.hero-wrapper {
-  position: relative;
-  width: 50%;
-  display: flex;
-  @media (max-width: 768px) {
-    width: 80%;
-  };
-}
+
+
+
+
+
 
 .hero-content {
-  padding-left: 20px;
   width: 75%;
+  padding-bottom: 100px;
   @media (max-width: 1532px) {
     width: 100%;
   }
@@ -147,7 +237,6 @@ code {
   font-size: 84px;
   line-height: 85px;
   font-weight: 500;
-  font-family: 'Melodrama';
   @media (max-width: 1532px) {
     font-size: 64px;
     line-height: 67px;
@@ -186,26 +275,6 @@ code {
   gap: 30px;
 }
 
-.hero-cta a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  margin-top: 20px;
-  border-radius: 10px;
-  padding: 5px 15px;
-  font-size: 16px;
-  text-align: center;
-  cursor: pointer;
-  color: var(--button-text);
-  text-decoration: none;
-  font-weight: 600;
-  background-color: var(--button);
-  &:hover {
-    background-color: var(--button-hover);
-    color: var(--button-text);
-  }
-}
 
 .hero-image {
   position: absolute;
@@ -216,27 +285,112 @@ code {
 
 
 
-.pricing-container {
-  width: 100%;
-  padding: 50px 0;
+
+
+
+.cases-content {
   display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.cases-content h1{
+  text-align: center;
+  font-size: 34px;
+  line-height: 38px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  @media (max-width: 1532px) {
+    font-size: 28px;
+    line-height: 30px;
+  };
+  @media (max-width: 1024px) {
+    font-size: 25px;
+    line-height: 25px;
+  };
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 21px;
+  };
+}
+.cases-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media (max-width: 580px) {
+    justify-content: center;
+  };
+}
+.case {
+  position: relative;
+  display: flex;
+  height: 200px;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid var(--subtitle-dark);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 4px 4px 20px var(--shadow-dark);
+  @media (max-width: 1024px) {
+    padding: 10px;
+    height: 150px;
+  };
+  @media (max-width: 580px) {
+    width: 50%;
+    height: 200px;
+  };
+  @media (max-width: 430px) {
+    width: 80%;
+  };
+}
+.case-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.case svg{
+  max-height: 25%;
+  @media (max-width: 1024px) {
+    max-height: 20%;
+  };
+}
+.case-flipped {
+  text-align: center;
+}
+
+
+
+
+
+
+
+.pricing-content {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.pricing-wrapper {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.pricing-content {
+.pricing-cards {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
   gap: 30px;
+  @media (max-width: 1532px) {
+    gap: 15px;
+    padding: 20px;
+  };
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 50px;
+  };
+
 }
 
 .pricing-card {
@@ -249,7 +403,10 @@ code {
   padding: 10px 20px;
   background: var(--pricing-card-bg-light);
   border-radius: 10px;
-  box-shadow: 5px 10px 20px var(--shadow);
+  box-shadow: 5px 10px 20px var(--shadow-light);
+  @media (max-width: 1532px) {
+    padding: 5px 10px;
+  };
 }
 
 .pricing-card-featured {
@@ -289,11 +446,17 @@ code {
   font-size: 28px;
   margin: 0;
   margin: 10px 0;
+  color: var(--link-light);
 }
 
 .pricing-card-header span {
+  color: var(--link-light);
   font-size: 40px;
   font-weight: 600;
+}
+
+.pricing-card-header h4 {
+  color: var(--link-light);
 }
 
 .pricing-card-benefits {
@@ -311,6 +474,7 @@ code {
 
 .pricing-card-benefit p {
   margin: 0;
+  color: var(--link-light);
 }
 
 .pricing-card-benefit-check {
@@ -325,3 +489,70 @@ code {
   align-self: flex-end;
   margin-bottom: 30px;
 }
+
+.contact-form-container {
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.contact-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 70px;
+}
+
+.container input, textarea, select{
+  padding: 10px;
+  width: 97%;
+  font-size: 16px;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px var(--link-light-hover);
+  color: var(--link-light-hover);
+}
+
+.container select {
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--bg-light);
+  }
+} 
+.container textarea {
+  height: 90px;
+}
+
+
+
+
+
+
+.footer-container {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-container nav {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-container p {
+  color: var(--link-light)
+}
+
+.footer-container a {
+  color: var(--link-light);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .4s;
+}
+

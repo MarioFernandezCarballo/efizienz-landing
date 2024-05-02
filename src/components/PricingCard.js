@@ -1,6 +1,12 @@
 import CheckSVG from '../images/CheckSVG';
 
 export default function PricingCard(props) {
+
+  const handleClick = () => {
+    props.handleClick(props.title)
+    props.handleVisible(true)
+  }
+
   return (
     <div className={`pricing-card ${props.featured && "pricing-card-featured"}`}>
       {props.featured &&
@@ -12,8 +18,8 @@ export default function PricingCard(props) {
         <div className='pricing-card-header'>
           <h3>{props.title}</h3>
           <p><span>{props.price}€</span>/mes</p>
-        </div>
         <h4>{props.description}</h4>
+        </div>
         <div className='pricing-card-benefits'>
           {props.benefits.map((b, i) => {
             return (
@@ -28,7 +34,7 @@ export default function PricingCard(props) {
         </div>
       </div>
       <div className='pricing-cta'>
-        <a>Empecemos</a>
+        <a href='#form' onClick={() => {handleClick()}} className={`button ${props.featured && 'featured'}`}>Empecemos</a>
       </div>
     </div>
   )
