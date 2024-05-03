@@ -3,7 +3,7 @@ import CheckSVG from '../images/CheckSVG';
 export default function PricingCard(props) {
 
   const handleClick = () => {
-    props.handleClick(props.title)
+    props.handleClick(`${props.title} - ${props.price}€/mes`)
     props.handleVisible(true)
   }
 

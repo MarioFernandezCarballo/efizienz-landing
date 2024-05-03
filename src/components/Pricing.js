@@ -18,23 +18,23 @@ const text = [
   },
   {
     title: 'Profesional',
-    price: '50',
+    price: '100',
     description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
     featured: true,
     benefits: [
-      'Saldo de 3000 ejecuciones / mes',
-      'Precio de 0,02 € por ejecución excedida',
+      'Saldo de 8000 ejecuciones / mes',
+      'Precio de 0,01 € por ejecución excedida',
       'Soporte técnico personalizado'
     ]
   },
   {
     title: 'Enterprise',
-    price: '50',
+    price: '200',
     description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
     featured: false,
     benefits: [
-      'Saldo de 3000 ejecuciones / mes',
-      'Precio de 0,02 € por ejecución excedida',
+      'Saldo de 20000 ejecuciones / mes',
+      'Precio de 0,01 € por ejecución excedida',
       'Soporte técnico personalizado'
     ]
   },
@@ -74,7 +74,7 @@ export default function Pricing() {
             exit={{ opacity: 0 }}
             transition={{duration: 1}}>
               <ContactForm option={option}
-                options={text.map((p) => {return p.title})}
+                options={text.map((p) => {return `${p.title} - ${p.price}€/mes`})}
                 />
             </motion.div>
             }
