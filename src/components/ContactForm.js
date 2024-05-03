@@ -48,18 +48,6 @@ function ContactForm(props) {
         onChange={(e) => setCompanyName(e.target.value)}
         required
       />
-      <select
-        value={selectedOption}
-        onChange={handleSelectOption}
-        required
-      >
-        <option value="">Seleccione una opción</option>
-        {props.options.map(option => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
       <input
         type='text'
         placeholder='Teléfono'
@@ -79,6 +67,18 @@ function ContactForm(props) {
         onChange={(e) => setDescription(e.target.value)}
         rows="4"
       ></textarea>
+      <select
+        value={selectedOption}
+        onChange={handleSelectOption}
+        required
+      >
+        <option value="">Seleccione una opción</option>
+        {props.options.map(option => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
       <a href={'#form'} onClick={sendEmail} className='button featured'>
         Enviar
       </a>
