@@ -57,7 +57,7 @@ code {
     color: var(--link-light-hover)
   }
 }
-.light h1, h4, p {
+.light h1, h4, p, label {
   color: var(--title-light);
 }
 .light h3, h4, span {
@@ -541,9 +541,18 @@ code {
   margin-top: 70px;
 }
 
+.form-loader {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-light);
+  border-top-color: var(--subtitle-light)
+}
+
 .container input, textarea, select{
+  margin-top: 5px;
   padding: 10px;
-  width: 97%;
+  width: 100%;
   font-size: 16px;
   height: 30px;
   border-radius: 5px;
@@ -551,13 +560,34 @@ code {
   color: var(--link-light-hover);
 }
 
+.container label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container label p {
+  color: var(--link-light);
+  margin-bottom: 0;
+  align-self: flex-start;
+}
+
 .container select {
   height: 50px;
-  width: 100%;
+  width: 40%;
+  margin-top: 20px;
   cursor: pointer;
   &:hover {
     background-color: var(--bg-light);
-  }
+  };
+  @media (max-width: 1200px) {
+    width: 100%;
+  };
+  @media (max-width: 768px) {
+    width: 95%;
+  };
 } 
 .container textarea {
   height: 90px;
