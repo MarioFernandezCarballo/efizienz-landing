@@ -7,7 +7,7 @@ export default function Cifras() {
   return (
     <div className='container light'>
       <div className='wrapper info'>
-        <div className='content cifras light' style={{margin: 'auto'}}>
+        <div className='content cifras light'>
           <div>
             <h1>Cifras</h1>
           </div>

@@ -10,7 +10,6 @@ export default function Info() {
             <h1>"Somos capaces de liberar a tu equipo de hasta un 86% de su tiempo diario."</h1>
             <div className='info-underline-1' style={{backgroundImage: `url(${underline})`}}/>
           </div>
-          
           <div className="title">  
             <h2>Es fácil imaginar cuánto se puede crecer con todo ese tiempo disponible.</h2>
             <h3>Desde la mejora de la actual atención al cliente hasta la ampliación del abanico de servicios ofertado con aquellos de más valor añadido.</h3>
