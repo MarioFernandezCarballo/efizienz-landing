@@ -1,102 +1,6 @@
-import Case from "./Case"
+import {Case6SVG, Case7SVG, Case8SVG } from '../images/Cases';
+import point from '../images/round.png';
 
-
-const casesJuridicos = [
-  {
-    title: 'Generación de documentos',
-    description: 'Contratos, ofertas... lo que tú necesites.',
-    icon: 1
-  },
-  {
-    title: 'Emails',
-    description: 'Envío automático de emails con información relevante para tus clientes.',
-    icon: 2
-  },
-  {
-    title: 'Descarga de documentos',
-    description: 'Borradores de la renta, informes de plataformas de terceros (Seguridad Social, AEAT, Intrastat...).',
-    icon: 3
-  },
-  {
-    title: 'Cumplimentación',
-    description: 'Rellenar formularios, completar reclamaciones...',
-    icon: 4
-  },
-  {
-    title: 'Generación de documentos',
-    description: 'Contratos, ofertas... lo que tú necesites.',
-    icon: 1
-  },
-  {
-    title: 'Lo que necesites',
-    description: 'Contáctanos para conocer todas las funcionalidades disponibles.',
-    icon: 5
-  },
-]
-const casesFiscal = [
-  {
-    title: 'Generación de documentos',
-    description: 'Contratos, ofertas... lo que tú necesites.',
-    icon: 1
-  },
-  {
-    title: 'Emails',
-    description: 'Envío automático de emails con información relevante para tus clientes.',
-    icon: 2
-  },
-  {
-    title: 'Descarga de documentos',
-    description: 'Borradores de la renta, informes de plataformas de terceros (Seguridad Social, AEAT, Intrastat...).',
-    icon: 3
-  },
-  {
-    title: 'Cumplimentación',
-    description: 'Rellenar formularios, completar reclamaciones...',
-    icon: 4
-  },
-  {
-    title: 'Generación de documentos',
-    description: 'Contratos, ofertas... lo que tú necesites.',
-    icon: 1
-  },
-  {
-    title: 'Lo que necesites',
-    description: 'Contáctanos para conocer todas las funcionalidades disponibles.',
-    icon: 5
-  },
-]
-const casesLaboral = [
-  {
-    title: 'Generación de documentos',
-    description: 'Contratos, ofertas... lo que tú necesites.',
-    icon: 1
-  },
-  {
-    title: 'Emails',
-    description: 'Envío automático de emails con información relevante para tus clientes.',
-    icon: 2
-  },
-  {
-    title: 'Descarga de documentos',
-    description: 'Borradores de la renta, informes de plataformas de terceros (Seguridad Social, AEAT, Intrastat...).',
-    icon: 3
-  },
-  {
-    title: 'Cumplimentación',
-    description: 'Rellenar formularios, completar reclamaciones...',
-    icon: 4
-  },
-  {
-    title: 'Generación de documentos',
-    description: 'Contratos, ofertas... lo que tú necesites.',
-    icon: 1
-  },
-  {
-    title: 'Lo que necesites',
-    description: 'Contáctanos para conocer todas las funcionalidades disponibles.',
-    icon: 5
-  },
-]
 
 export default function UseCases() {
   return (
@@ -105,15 +9,42 @@ export default function UseCases() {
         <div className='cases-content dark'>
           <h1>Casos de uso</h1>
           <div className="cases-container">
-            {casesJuridicos.map((c, i) => {
-              return (
-                <Case key={i}
-                title={c.title}
-                description={c.description}
-                icon={c.icon}
-                />
-              )
-            })}
+            <div className="case">
+              <div className='case-image'>
+                <Case7SVG/>
+              </div>
+              <div className='case-content'>
+                <h2>Departamentos jurídicos y despachos de abogados</h2>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Gestión de documentacion en demandas colectivas</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Redacción de documentos en plantilla automáticamente</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Comunicaciones recurrentes con clientes</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Redacción de documentos legales</p></div>
+              </div>
+            </div>
+            <div className="case reverse-query">
+              <div className='case-content'>
+                <h2>Contable/Fiscal</h2>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Descarga automática de documentación de la AEAT</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Descarga de facturas automática de clientes</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Automatiza descarga de borradores de la renta</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Divide, une y transforma documentos</p></div>
+              </div>
+              <div className='case-image'>
+                <Case8SVG/>
+              </div>
+            </div>
+            <div className="case">
+              <div className='case-image'>
+                <Case6SVG/>
+              </div>
+              <div className='case-content'>
+                <h2>Laboral</h2>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Contacto directo con sistema RED</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Gestión automática de documentación con Seguridad Social</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Control de certificados digitales</p></div>
+                <div className='case-point'><div className='point' style={{backgroundImage: `url(${point})`}}/><p>Descarga automáticamente informes ITA</p></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
