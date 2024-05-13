@@ -11,8 +11,8 @@ const text = [
     description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
     featured: false,
     benefits: [
-      'Saldo de 3000 ejecuciones / mes',
-      'Precio de 0,02 € por ejecución excedida',
+      '3000 ejecuciones / mes',
+      '0,02 € por ejecución excedida',
       'Soporte técnico personalizado'
     ]
   },
@@ -22,8 +22,8 @@ const text = [
     description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
     featured: true,
     benefits: [
-      'Saldo de 8000 ejecuciones / mes',
-      'Precio de 0,01 € por ejecución excedida',
+      '8000 ejecuciones / mes',
+      '0,01 € por ejecución excedida',
       'Soporte técnico personalizado'
     ]
   },
@@ -33,8 +33,8 @@ const text = [
     description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
     featured: false,
     benefits: [
-      'Saldo de 20000 ejecuciones / mes',
-      'Precio de 0,01 € por ejecución excedida',
+      '20000 ejecuciones / mes',
+      '0,01 € por ejecución excedida',
       'Soporte técnico personalizado'
     ]
   },
@@ -46,8 +46,8 @@ export default function Pricing() {
 
   return (
     <div id='pricing' className='container light'>
-      <div className='wrapper light'>
-        <div className='pricing-content light'>
+      <div className='wrapper'>
+        <div className='pricing-content'>
           <h1>Planes disponibles</h1>
           <div className='pricing-cards'>
             {text.map((p, i) => {
@@ -65,10 +65,16 @@ export default function Pricing() {
               )
             })}
           </div>
+          <div id='contact' className='doubts'>
+            <p className='heading1'>¿Dudas?</p>
+            <div className='pricing-cta'>
+              <a href='#form' onClick={() => {setFormVisible(true)}} className={`button`}>Contáctanos</a>
+            </div>
+          </div>
           <AnimatePresence>
             {formVisible &&
             <motion.div 
-            className='wrapper'
+            className='container'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1}}
             exit={{ opacity: 0 }}
