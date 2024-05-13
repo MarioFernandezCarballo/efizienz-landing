@@ -48,7 +48,8 @@ export default function Pricing() {
     <div id='pricing' className='container light'>
       <div className='wrapper'>
         <div className='pricing-content'>
-          <h1>Planes disponibles</h1>
+          <h1 className='heading1'>Planes disponibles</h1>
+          <hr/>
           <div className='pricing-cards'>
             {text.map((p, i) => {
               return (
