@@ -7,9 +7,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 const text = [
   {
     title: 'Starter',
-    price: '50',
+    price: '80',
     description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
     featured: false,
+    custom: false,
     benefits: [
       '3000 ejecuciones / mes',
       '0,02 € por ejecución excedida',
@@ -18,9 +19,10 @@ const text = [
   },
   {
     title: 'Profesional',
-    price: '100',
-    description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
+    price: '150',
+    description: 'Para despachos y asesorías con más de dos personas y nuemrosos clientes.',
     featured: true,
+    custom: false,
     benefits: [
       '8000 ejecuciones / mes',
       '0,01 € por ejecución excedida',
@@ -29,13 +31,14 @@ const text = [
   },
   {
     title: 'Enterprise',
-    price: '200',
-    description: 'Para impulsar la automatización en despachos y asesorías de más de dos personas y decenas de clientes.',
+    price: 'A medida',
+    description: 'Cuéntanos lo que necesitas y crearemos la solucion que mejor se ajuste.',
     featured: false,
+    custom: true,
     benefits: [
-      '20000 ejecuciones / mes',
-      '0,01 € por ejecución excedida',
-      'Soporte técnico personalizado'
+      'Solución a medida',
+      'Soporte técnico personalizado',
+      'Adaptada a tus necesidades'
     ]
   },
 ]
@@ -56,6 +59,7 @@ export default function Pricing() {
                 <PricingCard 
                   key={i}
                   featured={p.featured}
+                  custom={p.custom}
                   title={p.title}
                   price={p.price}
                   description={p.description}
