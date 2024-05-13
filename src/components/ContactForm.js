@@ -61,8 +61,8 @@ function ContactForm(props) {
   }
 
   return (
-    <div id='form' className='contact-form light'>
-      <h3>Contáctanos</h3>
+    <div id='form' className='contact-form light body'>
+      <h3 className='heading1'>Contáctanos</h3>
       <label>
         <p>Nombre de la empresa <span style={{color: 'red'}}>*</span></p>
         <input

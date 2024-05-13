@@ -10,11 +10,18 @@ import Ventajas from './components/Ventajas';
 
 function App() {
   return (
-    <div className="App light">
+    <div className="App">
       <Header />
       <Hero />
       <Info/>
       <Cifras />
+      <div className='container light'>
+        <div className='info-quotes'>
+          <div >
+            <h2>"Simplemente a través de software es posible conseguirlo."</h2>
+          </div>
+        </div>
+      </div>
       <UseCases />
       <Ventajas />
       <Pricing />
