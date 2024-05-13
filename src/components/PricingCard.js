@@ -17,7 +17,11 @@ export default function PricingCard(props) {
       <div>
         <div className='pricing-card-header'>
           <h3>{props.title}</h3>
-          <p><span>{props.price}€</span>/mes</p>
+          {props.custom ?
+            <p>{props.price}</p>
+            :
+            <p><span>{props.price}€</span>/mes</p>
+          }
         <h4 className='body'>{props.description}</h4>
         </div>
         <div className='pricing-card-benefits body'>
